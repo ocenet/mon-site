@@ -1,0 +1,118 @@
+
+/* ========= OcéNet — Thème ========= */
+:root{
+  /* Palette extraite du logo OcéNet */
+  --primary:#1671c2;      /* bleu principal (cercle) */
+  --primary-dark:#0a3b82; /* bleu foncé (détails) */
+  --accent:#3aa84b;       /* vert (toit / goutte) */
+
+  /* UI */
+  --text:#1f2a44;         /* texte courant (bleu gris foncé) */
+  --muted:#6b7c93;        /* texte secondaire */
+  --white:#fff;
+  --light:#f7fafc;        /* fond clair */
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{
+  margin:0; padding:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  color:var(--text); background:#fff;
+}
+img{max-width:100%; display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Helpers */
+.flex{display:flex;gap:16px}
+.between{justify-content:space-between}
+.center{align-items:center}
+.grid{display:grid;gap:24px}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:1100px){.grid.five{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:900px){
+  .grid.two,.grid.three,.grid.five{grid-template-columns:1fr}
+}
+
+/* Header */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(180%) blur(8px);
+  border-bottom:1px solid #eee;
+}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--primary-dark)}
+.logo-img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.logo-text{font-weight:700;letter-spacing:.4px}
+.main-nav a{margin-left:18px;color:var(--text);text-decoration:none}
+.main-nav .cta{
+  padding:10px 14px;border:2px solid var(--primary);
+  border-radius:10px;color:var(--primary);font-weight:600
+}
+
+/* Barre contact */
+.top-contact{display:flex;gap:12px;align-items:center;font-weight:600}
+.top-contact .contact-link{color:var(--primary-dark);text-decoration:none}
+.top-contact .dot{opacity:.4}
+
+/* Hero */
+.hero{
+  padding:64px 0;
+  background:linear-gradient(180deg, rgba(22,113,194,.08), #fff);
+}
+.hero h1{font-size:2.2rem;margin:0 0 12px;color:var(--primary-dark)}
+.lead{font-size:1.1rem;color:#243b53}
+.actions{margin-top:18px}
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none}
+.btn.primary{background:var(--primary);color:var(--white);font-weight:700}
+.btn.ghost{border:2px solid var(--primary);color:var(--primary);font-weight:600;background:transparent}
+
+/* Logos partenaires */
+.trust{margin-top:26px}
+.trust-title{color:var(--muted);font-weight:600}
+.logos{display:flex;gap:20px;flex-wrap:wrap}
+.logos img{height:28px;opacity:.8;filter:grayscale(30%)}
+
+/* Media */
+.hero-media img, .card img, .gallery img{width:100%;height:auto;border-radius:14px}
+.hero figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
+
+/* Services */
+.services{padding:48px 0;background:var(--light)}
+.services h2, .realisations h2, .avis h2, .contact h2{margin-top:0;color:var(--primary-dark)}
+.cards .card{
+  background:#fff;border:1px solid #eee;border-radius:14px;padding:16px;
+  display:flex;flex-direction:column;transition:box-shadow .2s ease, transform .2s ease;
+}
+.cards .card:hover{box-shadow:0 8px 24px rgba(10,59,130,.12);transform:translateY(-2px)}
+.card h3{margin:10px 0;color:var(--primary-dark)}
+.card p{flex:1}
+
+/* Pictos */
+.picto{width:84px;height:auto;display:block;margin-bottom:8px}
+
+/* Réalisations */
+.realisations{padding:48px 0}
+.gallery img{border:1px solid #eee}
+
+/* Avis */
+.avis{padding:48px 0;background:var(--light)}
+.quotes blockquote{margin:0;padding:16px;border-left:4px solid var(--primary);background:#fff;border-radius:12px}
+.quotes cite{display:block;margin-top:8px;color:var(--muted)}
+
+/* Contact */
+.contact{padding:48px 0}
+.form{background:#fff;border:1px solid #eee;border-radius:14px;padding:16px}
+.form label{display:block;margin:10px 0;}
+.form input,.form textarea,.form select{
+  width:100%;padding:10px;border:1px solid #ddd;border-radius:10px
+}
+.form button{margin-top:10px}
+.form-note{font-size:.85rem;color:var(--muted)}
+
+/* Footer */
+.site-footer{padding:20px 0;border-top:1px solid #eee;background:#fafafa}
+.site-footer p{margin:0;color:#334e68}
+.footer-nav a{margin-left:14px;color:var(--muted);text-decoration:none}
